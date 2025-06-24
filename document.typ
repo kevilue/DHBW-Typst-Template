@@ -8,11 +8,13 @@ When editing the content, this file should be used.
 // Package for acronyms
 #import "@preview/acrostiche:0.5.1": *
 // Frontpage
-#import "ressources/frontpage.typ": frontpage
+#import "resources/frontpage.typ": frontpage
 // Declaration of personal contribution
-#import "ressources/erklaerung.typ": erklaerung
+#import "resources/erklaerung.typ": erklaerung
 
 // Front page
+// Adjust the column sizes in resources/frontpage.typ (line 54)
+// if your (supervisors) name is too long
 #frontpage(
   workTitle:"Bachelor thesis",
   title: "My Topic",
@@ -23,6 +25,10 @@ When editing the content, this file should be used.
   course: "My course",
   supervisor: "Max Mustermann",
 )
+
+// Set regular line spacing and justification
+// Move this line above #frontpage to use line spacings for the title
+#set par(justify: true, leading: 1.5em, spacing: 1.5em)
 
 #pagebreak()
 

@@ -91,10 +91,9 @@ The actual content of the document should be changed in the file document.typ, t
   #align(center, it.caption)
   #v(1em)
 ]
-// Line spacing and justification
-#set par(justify: true, leading: 1.5em, spacing: 1.5em)
 // Equation numbering
 #set math.equation(numbering: "(1)")
+// Spacing and alignment for appendix headings
 #show figure.where(kind: "appendixHeading"): it => [
   #v(1em)
   #align(left)[#it]
