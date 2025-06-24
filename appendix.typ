@@ -4,7 +4,7 @@ appendix.typ
 This file contains the content of the appendix (attachments).
 */
 
-#import "ressources/appendixConfig.typ": appendix-heading
+#import "resources/appendixConfig.typ": appendix-heading
 
 // Content
 
