@@ -57,21 +57,36 @@ When editing the content, this file should be used.
 )
 #pagebreak()
 
-// Table of figures
+// List of figures
 #show outline.entry.where(
   level: 1
 ): set text(weight: "regular")
 #outline(
-  title: text()[Table of Figures],
+  title: text()[List of Figures],
   target: figure.where(kind: image)
 )
 #pagebreak()
 
-// Table of Listings
+// List of Listings
 #outline(
-  title: text()[Table of Listings],
+  title: text()[List of Listings],
   target: figure.where(kind: "listing")
 )
+#pagebreak()
+
+// List of tables
+#outline(
+  title: text()[List of Tables],
+  target: figure.where(kind: table)
+)
+#pagebreak()
+
+// List of formulas
+#outline(
+  title: text()[List of Formulas],
+  target: math.equation.where(block: true)
+)
+
 
 // Set regular page formatting
 #set page(
@@ -88,6 +103,7 @@ When editing the content, this file should be used.
 #include "content/chapter1.typ"
 #include "content/chapter2.typ"
 #include "content/chapter3.typ"
+#include "content/chapter4.typ"
 
 
 // Appendix

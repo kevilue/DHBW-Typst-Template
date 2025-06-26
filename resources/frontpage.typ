@@ -47,12 +47,11 @@ This file contains the front page of the document.
     ])
     ])
   ]
-  v(5pt)
   // Details
   align(bottom)[
   #grid(
     columns: (1fr, 1fr),
-    rows: (20pt, 20pt),
+    rows: (2em, 2em),
     align(text(14pt)[
       #if lang == "en" [
         *Author:* 

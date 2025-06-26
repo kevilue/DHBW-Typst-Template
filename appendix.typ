@@ -25,4 +25,41 @@ Insert an appendix entry with:
 The reference label has to be somewhere inside of the appendix content, since no label can be attached to the headings (limitations by Typst / didn't find a solution yet).
 
 #appendix-heading("Second appendix")
-Feel free to message me if you have any improvements.
+Feel free to message me if you have any improvements. To insert code here that does not appear in the list of listings, do this:
+
+#figure(
+  ```cpp
+  #include <iostream>
+
+  int main() {
+    std::cout << "Hello World!";
+    return 0;
+  }
+  ```,
+  kind: "appendixCode",
+  supplement: "",
+)
+
+And put your code description below. This is because if you use captions here they will be weird like this:
+
+#figure(
+  ```python
+  def main():
+    print("Hello World!")
+  ```,
+  kind: "appendixCode",
+  supplement: "Your Supplement",
+  caption: [I am a caption]
+)
+
+#pagebreak()
+
+If you add code like this:
+
+```python
+print("1")
+print("2")
+print("3")
+```
+
+You can see that the line spacing will be applied.

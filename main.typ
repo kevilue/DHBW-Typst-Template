@@ -24,6 +24,7 @@ The actual content of the document should be changed in the file document.typ, t
 ): it => {
     set align(left)
     set text(20pt)
+    set par(justify: true, leading: 1em, spacing: 1.5em)
     v(0.5em)
     it
     v(0.8em)
@@ -34,6 +35,7 @@ The actual content of the document should be changed in the file document.typ, t
 ): it => block(width: 100%)[
   #set align(left)
   #set text(16pt)
+  #set par(justify: true, leading: 1em, spacing: 1.5em)
   #v(0.5em)
   #it
   #v(0.8em)
@@ -44,6 +46,7 @@ The actual content of the document should be changed in the file document.typ, t
 ): it => block(width: 100%)[
   #set align(left)
   #set text(14pt)
+  #set par(justify: true, leading: 1em, spacing: 1.5em)
   #v(0.5em)
   #it
   #v(0.8em)
@@ -84,20 +87,33 @@ The actual content of the document should be changed in the file document.typ, t
   #align(center, it.caption)
   #v(1em)
 ]
-// Styling for figures of kind "dart" (listings)
+// Styling for figures of kind "appendixCode" (code in appendix).
+// This can be used so that the code wont be inside of the list of listings.
 #show figure.where(kind: "appendixCode"): it => [
   #set par(justify: true, leading: 1em)
-  #it.body
+  #v(1em)
+  #align(left, it.body)
   #align(center, it.caption)
   #v(1em)
 ]
-// Equation numbering
-#set math.equation(numbering: "(1)")
+// Table inset
+#set table(inset: 0.8em)
+// Styling for figures with tables
+#show figure.where(kind: table): it => {
+  v(1em)
+  it.body
+  it.caption
+  v(1em)
+}
 // Spacing and alignment for appendix headings
 #show figure.where(kind: "appendixHeading"): it => [
   #v(1em)
   #align(left)[#it]
 ]
+
+// Equation numbering
+#set math.equation(numbering: "(1)")
+
 // Import acronyms
 #import "acronyms.typ": acros
 // Init
