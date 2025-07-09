@@ -48,44 +48,23 @@ This file contains the front page of the document.
     ])
   ]
   // Details
-  align(bottom)[
+  align(bottom + center)[
   #grid(
-    columns: (1fr, 1fr),
-    rows: (2em, 2em),
-    align(text(14pt)[
-      #if lang == "en" [
-        *Author:* 
-      ] else if lang == "de" [
-        *Name: * 
-      ] else [
-        Language not implemented yet.
-      ]
-      #author
-    ]),
-    align(text(14pt)[
-      #if lang == "de" [
-        *Matrikelnummer:*
-      ] else [
-        *Matriculation Number:*
-      ] 
-      #matrNum
-    ]),
-    align(text(14pt)[
-      #if lang == "de" [
-        *Kurs:*
-      ] else [
-        *Course:*  
-      ]
-      #course
-    ]),
-    align(text(14pt)[
-      #if lang == "de" [
-        *Betreuer:*
-      ] else [
-        *Supervisor:*
-      ]
-      #supervisor
-    ])
+    columns: (auto, auto),
+    column-gutter: -0.8em,
+    row-gutter: -1em,
+    inset: 1em,
+    align: left,
+    text()[*Student*], author,
+    if lang == "en" {text()[*Matriculation Number*]} 
+    else if lang == "de" {text()[*Matrikelnummer*]}, 
+    matrNum,
+    if lang == "en" {text()[*Course*]} 
+    else if lang == "de" {text()[*Kurs*]}, 
+    course,
+    if lang == "en" {text()[*Supervisor*]} 
+    else if lang == "de" {text()[*Betreuer*]}, 
+    supervisor,    
   )  
   ]
 }
