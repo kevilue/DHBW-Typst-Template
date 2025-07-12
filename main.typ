@@ -110,6 +110,12 @@ The actual content of the document should be changed in the file document.typ, t
   #v(1em)
   #align(left)[#it]
 ]
+// Footnote styling
+#show footnote.entry: it => {
+  it.note
+  h(0.5em)
+  it.note.body
+}
 
 // Equation numbering
 #set math.equation(numbering: "(1)")
