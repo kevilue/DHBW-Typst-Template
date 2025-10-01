@@ -22,7 +22,7 @@ This chapter shows how to insert a listing.
   ```,
   kind: "listing",
   supplement: "Listing",
-  caption: [Implementation of the Example Class in the Dart language]
+  caption: [Implementation of an Example Class in the Dart language]
 ) <exampleclass>
 
 @exampleclass shows the usage of Listings in this template.
@@ -35,7 +35,7 @@ This chapter shows how to insert images as figures into this document. #footnote
   caption: [Logo of the DHBW Stuttgart]
 ) <logofigure>
 
-In @logofigure above the usage of figures, as well as the logo of the DHBW Stuttgart, is shown. 
+In @logofigure above, the usage of figures as well as the logo of the DHBW Stuttgart is shown. 
 
 == Sources and abbreviations
 Also, sources are cited like this: @Imaginary2025 or #cite(<Imaginary2025>). 

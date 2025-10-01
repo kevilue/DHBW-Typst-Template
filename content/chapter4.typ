@@ -11,7 +11,7 @@ Here is how to insert a table that shows up in the table of tables:
   caption: [This is a table]
 )
 
-It will show up in the table of tables. Formulas can be added like this:
+Formulas are added like this:
 
 #figure(
   $ y = m dot x + c $,

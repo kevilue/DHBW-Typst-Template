@@ -72,9 +72,13 @@ The actual content of the document should be changed in the file document.typ, t
 // Styling for figures with images
 #show figure.where(kind: image): it => [
   #v(1em)
-  #it.body
-  #v(0.5em)
-  #it.caption
+  // Block to keep everything one one page
+  // This avoids splitting up the image and caption on separate pages
+  #block({
+    it.body
+    v(0.5em)
+    it.caption
+    })
   #v(1em)
 ]
 // Styling for figures of kind "listing"

@@ -37,14 +37,12 @@ When editing the content, this file should be used.
   title: "My Topic"
 )
 
-// Acronyms
-#pagebreak()
-#print-index(title: "Abbreviations", row-gutter: 1.5em, delimiter: "", used-only: true)
+// First line indent for new paragrapha
+#set par(first-line-indent: 1em)
 
-// Header
-#set page(
-  header: [#align(right, image("images/logo.png", width: 17.5%))],
-)
+// Abstract (remove line if not needed)
+#pagebreak()
+#include "content/abstract.typ"
 
 // Table of contents
 // Headings level one in bold
@@ -52,6 +50,7 @@ When editing the content, this file should be used.
   level: 1
 ): set text(weight: "bold")
 // Print outline
+#pagebreak()
 #outline(
   title: text()[Table of Contents],
 )
@@ -87,11 +86,26 @@ When editing the content, this file should be used.
   target: math.equation.where(block: true)
 )
 
+// Acronyms
+#pagebreak()
+#print-index(title: "Abbreviations", row-gutter: 1.5em, delimiter: "", used-only: true)
+
+// Header
+#set page(
+  header: [#align(right, image("images/logo.png", width: 17.5%))],
+)
 
 // Set regular page formatting
 #set page(
   header: [#align(right, image("images/logo.png", width: 17.5%))],
-  numbering: "1"
+  numbering: "1",
+  footer: context[
+    #set par(spacing: 1em)
+    #align(center)[
+      #line(length: 100%, stroke: 0.5pt) // Line above number in page footer
+      #counter(page).display("1")
+      ]
+    ]
 )
 
 // Set page number to 1
@@ -106,6 +120,11 @@ When editing the content, this file should be used.
 #include "content/chapter4.typ"
 
 
+// Bibliography page
+#pagebreak()
+#bibliography("bibliography.bib", title: text()[Bibliography])
+
+
 // Appendix
 
 // Settings
@@ -116,7 +135,3 @@ When editing the content, this file should be used.
 // Content
 #include "appendix.typ"
 
-
-// Bibliography page
-#pagebreak()
-#bibliography("bibliography.bib", title: text()[Bibliography])

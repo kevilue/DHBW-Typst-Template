@@ -21,7 +21,7 @@
   }
   
   v(2.5em)
-  text()[#location, #date\ ]
+  text()[#location, #date ]
   v(2em)
   
   line(length: 40%, stroke: (thickness: 0.7pt))
